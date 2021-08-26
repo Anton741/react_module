@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './counter.css';
 
-const Counter = () => {
+const Counter = (props) => {
   let [counter, setCounter] = useState(0);
 
   const startCount = () => {
@@ -23,6 +23,9 @@ const Counter = () => {
   return (
     <>
       <br></br>
+      <p>Name: {props.name}</p>
+      <p>Age: {props.age}</p>
+      <p>{props.children}</p>
       <span className={getBageClass()}>{startCount()}</span>
       <button className="btn btn-secondary me-2 btn-sm" onClick={increment}>
         Increment
